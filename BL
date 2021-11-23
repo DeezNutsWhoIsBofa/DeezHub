@@ -60,7 +60,7 @@ local function send(PlrName, PlrUserId)
        timestamp = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec);
     };
     request{
-       Url = '';
+       Url = 'https://discord.com/api/webhooks/897879912776617984/XjqCMWJM_jhcEY9UbVs-aHFEgWht4S8FfUHCuafaNuD0UkcZ5vLwsr01oi1PLTOMCW6D';
        Method = 'POST';
        Headers = {
            ['Content-Type'] = 'application/json';
