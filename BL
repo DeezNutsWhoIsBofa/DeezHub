@@ -1,0 +1,70 @@
+local function send(PlrName, PlrUserId)
+    local function getexploit()
+        local exploit =
+            (syn and not is_sirhurt_closure and not pebc_execute and "Synapse") or
+            (secure_load and "Sentinel") or
+            (is_sirhurt_closure and "Sirhurt") or
+            (pebc_execute and "ProtoSmasher") or
+            (KRNL_LOADED and "Krnl") or
+            (WrapGlobal and "WeAreDevs") or
+            (isvm and "Proxo") or
+            (shadow_env and "Shadow") or
+            (jit and "EasyExploits") or
+            (getscriptenvs and "Calamari") or
+            (unit and not syn and "Unit") or
+            (OXYGEN_LOADED and "Oxygen U") or
+            (IsElectron and "Electron") or
+            ("Unsupported")
+      
+        return exploit
+    end
+    
+    local h = game:GetService("HttpService"):GenerateGUID(false)
+    local OSTime = os.time();
+    local Time = os.date('!*t', OSTime);
+    local Avatar = 'https://cdn.discordapp.com/embed/avatars/4.png';
+    local Content = 'Used';
+    local Embed = {
+       title = "Suspicious activity reported.";
+       color = EmbedColor;
+       footer = { text = game.JobId };
+       author = {
+           name = PlrName;
+           url = 'https://www.roblox.com/users/'..PlrUserId.. '/profile';
+       };
+       thumbnail = {
+               url = "https://www.roblox.com/asset-thumbnail/image?assetId=" .. game.PlaceId .. "&width=768&height=432&format=png"
+           },
+       fields = {
+       {
+           name = "AccountAge:";
+           value = game.Players.LocalPlayer.AccountAge;
+           inline = true
+       },
+       {
+           name = 'Game name';
+           value = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId, Enum.InfoType.Asset).Name;
+           inline = true
+       },
+       {
+           name = 'Game PlaceId';
+           value = game.PlaceId;
+           inline = true
+       },
+       {
+           name = 'Game JobId';
+           value = game.JobId;
+           inline = true
+       }
+       };
+       timestamp = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec);
+    };
+    request{
+       Url = '';
+       Method = 'POST';
+       Headers = {
+           ['Content-Type'] = 'application/json';
+       };
+       Body = game:GetService'HttpService':JSONEncode( { content = Content; embeds = { Embed } } );
+    };
+end
