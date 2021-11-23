@@ -6,8 +6,7 @@ local gamesSupported = {
 
 for i,v in pairs(gamesSupported) do
     if v == game.PlaceId then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/DeezNutsWhoIsBofa/DeezHub/main/"..v.."/"))
-    elseif v ~= game.PlaceId then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/DeezNutsWhoIsBofa/DeezHub/main/Universal/"))
+        print("Right game!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DeezNutsWhoIsBofa/DeezHub/main/"..v.."/"))()
     end
 end
