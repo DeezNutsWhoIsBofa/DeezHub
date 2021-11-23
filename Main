@@ -1,12 +1,19 @@
 --[[Deez Hub😎]]--
 
-local gamesSupported = {
-    "4958040666" -- Sewer City
-}
+local b
 
-for i,v in pairs(gamesSupported) do
-    if v == game.PlaceId then
-        print("Right game!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/DeezNutsWhoIsBofa/DeezHub/main/"..v.."/"))()
-    end
+local function gameId()
+    return game.PlaceId
+end
+
+b = gameId()
+local SewerCity = 4958040666
+
+if b == SewerCity then
+    print("Checking for the game...")
+    print("Success! Loading..")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/DeezNutsWhoIsBofa/DeezHub/main/"..b))()
+    print("Loaded!")
+    else
+    print("Fail!")
 end
