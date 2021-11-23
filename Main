@@ -1,0 +1,13 @@
+--[[Deez Hub😎]]--
+
+local gamesSupported = {
+    "4958040666" -- Sewer City
+}
+
+for i,v in pairs(gamesSupported) do
+    if v == game.PlaceId then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DeezNutsWhoIsBofa/DeezHub/main/"..v.."/"))
+    elseif v ~= game.PlaceId then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DeezNutsWhoIsBofa/DeezHub/main/Universal/"))
+    end
+end
