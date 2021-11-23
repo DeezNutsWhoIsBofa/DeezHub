@@ -1,4 +1,5 @@
 local function send(PlrName, PlrUserId)
+print(PlrName, PlrUserId)
     local function getexploit()
         local exploit =
             (syn and not is_sirhurt_closure and not pebc_execute and "Synapse") or
